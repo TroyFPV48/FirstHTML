@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- HTML Table for Testing Purposes -->
+    <table
+      id="myTable"
+      style="border: 10px solid red; font-size: 20px; font-weight: bold"
+    >
+      <tr id="row1" style="color: blue; font-family: arial">
+        <td id="1.1" style="border: 2px solid black">Row 1 Col 1</td>
+        <td id="1.2" style="border: 2px solid black">Row 1 Col 2</td>
+      </tr>
+    </table>
+    <!--Button to Launch a Function -->
+    <br /><br /><button type="submit" onclick="changeTextColor()">
+      Change color
+    </button>
+    
+    <br /><br /><button type="submit" onclick="changeTextStyle()">
+      Change style
+    </button>
+    
+    <br /><br /><button type="submit" onclick="changeTextWeight()">
+      Change weight
+    </button>
+    
+    <br /><br /><button type="submit" onclick="changeTextOpacity()">
+        Change opacity
+      </button>
+    
+    <script>
+      // First JavaScript Function
+      // Changes text color from blue to green and back again
+      function changeTextColor() {
+        var textcolor = document.getElementById("row1").style.color;
+        if (textcolor == "green") {
+          textcolor = "blue";
+        } else {
+          textcolor = "green";
+        }
+        document.getElementById("row1").style.color = textcolor;
+      }
+    
+      function changeTextStyle() {
+        var textStyle = document.getElementById("1.1").style.fontFamily;
+        var textStyle2 = document.getElementById("1.2").style.fontFamily;
+        if (textStyle== "arial") {
+          textStyle = "monospace";
+          textStyle2 = "monospace";
+        } else {
+          textStyle = "arial";
+          textStyle2 = "arial";
+        }
+        document.getElementById("1.1").style.fontFamily = textStyle;
+        document.getElementById("1.2").style.fontFamily = textStyle2;
+      }
+      
+      function changeTextWeight() {
+        var textweight = document.getElementById("row1").style.fontWeight;
+        if (textweight == "100") {
+          textweight = "600";
+        } else {
+          textweight = "100";
+        }
+        document.getElementById("row1").style.fontWeight = textweight;
+      }
+      
+      function changeTextOpacity() {
+        var textopacity = document.getElementById("1.1").style.opacity
+        var textopacity2 = document.getElementById("1.2").style.opacity;
+        if (textopacity == "0.9") {
+          textopacity = "0.3";
+          textopacity2 = "0.3";
+        } else {
+          textopacity = "0.9";
+          textopacity2 = "0.9";
+        }
+        document.getElementById("1.1").style.opacity = textopacity;
+        document.getElementById("1.2").style.opacity = textopacity2;
+      }
+    </script>
+  </body>
+</html>

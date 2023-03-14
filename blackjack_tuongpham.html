@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      font-family: Copperplate, Papyrus, fantasy;
+    }
+  </style>
+  <body>
+    <h1>blackjack</h1>
+    <p>click start to play!</p>
+    <input type="button" onclick="blackjack()" value="START" />
+
+    <script>
+      
+      //initialize all variables
+      function blackjack() {
+        var card = 0;
+        var total = 0;
+        var hitMe = true;
+        var dealer = 0;
+
+        while (hitMe) {
+          //repeat until hitMe is false or user is typing N
+          hitMe = prompt("Current total: " + total, "Take a card? Y/N");
+          if (hitMe == "Y") {
+            hitMe = true;
+            card = Math.ceil(11 * Math.random());
+            total += card;
+          } else {
+            hitMe = false;
+          }
+        }
+        //final total
+        dealer = Math.ceil(11 * Math.random()) + Math.ceil(11 * Math.random()); //dealer always takes 2 cards
+        if ((total <= 21 && total > dealer) || (total <= 21 && dealer > 21)) {
+          alert(
+            "You won! Your hand is worth " +
+              total +
+              ". Dealer got " +
+              dealer +
+              "."
+          );
+        } else {
+          alert(
+            "You lost. Your hand is worth " +
+              total +
+              ". Dealer got " +
+              dealer +
+              "."
+          );
+        }
+      }
+    </script>
+  </body>
+</html>

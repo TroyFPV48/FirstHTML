@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      font-family: Copperplate, Papyrus, fantasy;
+    }
+    h1 {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h1>Deck of carD</h1>
+    <script>
+      var suits = ["Spades", "Diamonds", "Clubs", "Hearts"]; //suits sequence
+      var values = [
+        "A",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "J",
+        "Q",
+        "K",
+      ]; //values sequence
+
+      var deck = new Array(); //make an empty array of card deck
+      for (let i = 0; i < suits.length; i++) {
+        //loop of suits's sequence
+        for (let x = 0; x < values.length; x++) {
+          //loop of values's sequence
+          var card = "<br>" + values[x] + " of " + suits[i]; //defining each element of the card
+          deck.push(card); //add new element to the deck of card
+        }
+      }
+
+      function shuffle(shuffled) {
+        let currentIndex = shuffled.length,
+          randomIndex;
+
+        // While there remain elements to shuffle
+        while (currentIndex != 0) {
+          // Pick a remaining element
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+
+          // Swap it with the current element
+          [shuffled[currentIndex], shuffled[randomIndex]] = [
+            shuffled[randomIndex],
+            shuffled[currentIndex],
+          ];
+        }
+
+        return shuffled;
+      }
+
+      //output
+      let deckofcard = " <br> <br> Card decK :";
+      var output = deckofcard.fontsize(5);
+      document.write("<br>" + output + "<br>");
+      document.write(deck.toString());
+
+      //reversing the deck
+
+      let deckofcard2 = " <br> <br> Reveresed Card decK :";
+      var output2 = deckofcard2.fontsize(5);
+
+      document.write("<br>" + output2 + "<br>");
+
+      document.write(deck.reverse().toString());
+
+      //shuffled deck
+      let deckofcard3 = " <br> <br> Shuffled Card decK :";
+
+      var output3 = deckofcard3.fontsize(5);
+
+      document.write("<br>" + output3 + "<br>");
+
+      document.write(shuffle(deck).toString());
+    </script>
+  </body>
+</html>
